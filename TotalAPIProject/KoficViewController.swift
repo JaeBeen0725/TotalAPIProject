@@ -24,7 +24,7 @@ struct WeeklyBoxOffice {
     let openDT: String
     let rank: String
 }
-let dw = ["searchDailyBoxOfficeList.json", "searchWeeklyBoxOfficeList.json"]
+
 
 class KoficViewController: UIViewController {
     
@@ -157,6 +157,16 @@ extension KoficViewController: UITableViewDataSource,UITableViewDelegate {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        guard let vc = self.storyboard?.instantiateViewController(identifier: "DetailKoficViewController") as? DetailKoficViewController else { return }
+     
+        vc.koficTitle = weeklyBoxOfficeList[indexPath.row].movieName
+        vc.koficNum = weeklyBoxOfficeList[indexPath.row].movieCd
+        
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
     
     
 }
@@ -183,7 +193,14 @@ extension KoficViewController: UICollectionViewDataSource, UICollectionViewDeleg
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let vc = self.storyboard?.instantiateViewController(identifier: "DetailKoficViewController") as? DetailKoficViewController else {return}
+        
     
+        vc.koficNum = dalilBoxOfficeList[indexPath.row].movieCd
+        vc.koficTitle = dalilBoxOfficeList[indexPath.row].movieName
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
     
 }
 

@@ -12,43 +12,49 @@ import Alamofire
 
 
 
-let koficNum = 1
+
 class DetailKoficViewController: UIViewController {
     
-    var detailList: [Detail] = []
+    var koficNum = 1
+    var koficTitle: String = "a"
+    var detailList: [String] = []
     @IBOutlet var detailKoficTableView: UITableView!
     @IBOutlet var detailTitleLabel: UILabel!
-    @IBOutlet var detailDateLabel: UILabel!
+    @IBOutlet var detailGenreLabel: UILabel!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("=================\(koficNum)")
         detailKoficTableView.dataSource = self
         detailKoficTableView.delegate = self
-        
+        detailKofic(movieCd: koficNum)
+        detailTitleLabel.text = koficTitle
     }
     
     
-    func detailKofic(movieCd: String) {
+    func detailKofic(movieCd: Int) {
         
-        let url = "http://www.kobis.or.kr/kobisopenapi/webservice/rest/movie/searchMovieInfo.json?key=\(APIKey.kofic)&movieCd=\(movieCd)"
+        let url = "https://www.kobis.or.kr/kobisopenapi/webservice/rest/movie/searchMovieInfo.json?key=\(APIKey.kofic)&movieCd=\(movieCd)"
         AF.request(url, method: .get).validate().responseJSON { response in
             switch response.result {
             case .success(let value):
                 let json = JSON(value)
-                
-                
-                for item in json["movieInfoResult"]["movieInfo"].arrayValue {
-                    let movieNm = item["movieNm"].stringValue
-                    let genre = item["genres"][0].stringValue
-                    let actor = item["actors"]["peopleNm"].stringValue
-                    
+            
+
+                for item in json["movieInfoResult"]["movieInfo"]["actors"].arrayValue {
+
+
+                    let actor = item["peopleNm"].stringValue
+
+
+                    self.detailList.append(actor)
                 }
                 
                 self.detailKoficTableView.reloadData()
                 
                 
-                // print("JSON: \(json)")
+                 print("JSON: \(json)")
             case .failure(let error):
                 print(error)
             }
@@ -73,7 +79,7 @@ extension DetailKoficViewController: UITableViewDataSource,UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "DetailKoficTableViewCell", for: indexPath) as? DetailKoficTableViewCell else {return UITableViewCell() }
         
-        
+        cell.actorName.text = detailList[indexPath.row]
         
         return cell
     }

@@ -440,17 +440,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="daC-rI-iVy">
-                                <rect key="frame" x="8" y="147" width="377" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="336-gc-J5D"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Vmd-RM-7A0">
-                                <rect key="frame" x="0.0" y="177" width="393" height="641"/>
+                                <rect key="frame" x="0.0" y="139" width="393" height="679"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="DetailKoficTableViewCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DetailKoficTableViewCell" rowHeight="81" id="Cgl-ZW-isN" customClass="DetailKoficTableViewCell" customModule="TotalAPIProject" customModuleProvider="target">
@@ -485,11 +476,8 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="p9S-Ov-swz" firstAttribute="top" secondItem="dhl-Nw-gbu" secondAttribute="top" constant="30" id="3kU-Cf-pH6"/>
-                            <constraint firstItem="Vmd-RM-7A0" firstAttribute="top" secondItem="daC-rI-iVy" secondAttribute="bottom" id="8n1-ha-3Yh"/>
-                            <constraint firstItem="daC-rI-iVy" firstAttribute="leading" secondItem="dhl-Nw-gbu" secondAttribute="leading" constant="8" id="Aad-wy-k2m"/>
-                            <constraint firstItem="dhl-Nw-gbu" firstAttribute="trailing" secondItem="daC-rI-iVy" secondAttribute="trailing" constant="8" id="Ftp-rN-Y6w"/>
                             <constraint firstItem="dhl-Nw-gbu" firstAttribute="trailing" secondItem="Vmd-RM-7A0" secondAttribute="trailing" id="PQ8-FH-I0I"/>
-                            <constraint firstItem="daC-rI-iVy" firstAttribute="top" secondItem="p9S-Ov-swz" secondAttribute="bottom" constant="8" id="edu-d4-Z0T"/>
+                            <constraint firstItem="Vmd-RM-7A0" firstAttribute="top" secondItem="p9S-Ov-swz" secondAttribute="bottom" id="ZHt-Lb-r0F"/>
                             <constraint firstItem="dhl-Nw-gbu" firstAttribute="bottom" secondItem="Vmd-RM-7A0" secondAttribute="bottom" id="hfX-0D-cg5"/>
                             <constraint firstItem="dhl-Nw-gbu" firstAttribute="trailing" secondItem="p9S-Ov-swz" secondAttribute="trailing" constant="8" id="kxp-lm-S58"/>
                             <constraint firstItem="p9S-Ov-swz" firstAttribute="leading" secondItem="dhl-Nw-gbu" secondAttribute="leading" constant="8" id="mCC-fC-QOw"/>
@@ -497,7 +485,6 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="detailDateLabel" destination="daC-rI-iVy" id="MzG-3M-PTh"/>
                         <outlet property="detailKoficTableView" destination="Vmd-RM-7A0" id="cDv-Wx-djh"/>
                         <outlet property="detailTitleLabel" destination="p9S-Ov-swz" id="hDy-0A-icc"/>
                     </connections>
