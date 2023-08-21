@@ -35,7 +35,7 @@ class DetailKoficViewController: UIViewController {
     
     func detailKofic(movieCd: Int) {
         
-        let url = "https://www.kobis.or.kr/kobisopenapi/webservice/rest/movie/searchMovieInfo.json?key=\(APIKey.kofic)&movieCd=\(movieCd)"
+        let url = "http://www.kobis.or.kr/kobisopenapi/webservice/rest/movie/searchMovieInfo.json?key=\(APIKey.kofic)&movieCd=\(movieCd)"
         AF.request(url, method: .get).validate().responseJSON { response in
             switch response.result {
             case .success(let value):
@@ -85,3 +85,5 @@ extension DetailKoficViewController: UITableViewDataSource,UITableViewDelegate {
     }
     
 }
+
+

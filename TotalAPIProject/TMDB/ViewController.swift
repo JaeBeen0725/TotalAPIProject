@@ -32,37 +32,53 @@ class ViewController: UIViewController {
         movieTableView.delegate = self
         
         movieTableView.rowHeight = 400
-        movie()
-    }
-    func movie() {
-        let url = "https://api.themoviedb.org/3/trending/all/week?api_key=\(APIKey.tmdbKey)"
-        AF.request(url, method: .get).validate().responseJSON { response in
-            switch response.result {
-            case .success(let value):
-                let json = JSON(value)
-                
-                for item in json["results"].arrayValue {
-                    let movieDate = item["release_date"].stringValue
-                    let movieGenre = item["genre_ids"][0].intValue
-                    let movieThumbnail = item["poster_path"].stringValue
-                    let movieTitle = item["title"].stringValue
-                    let movieCastId = item["id"].intValue
-                    let movieBackImage = item["backdrop_path"].stringValue
-                    let movieOverView = item["overview"].stringValue
-                    self.movieList.append(Movie(date: movieDate, genre: movieGenre, thumbnail: movieThumbnail, title: movieTitle, castId: movieCastId, backImage: movieBackImage, overView: movieOverView))
-                }
-                
-                self.movieTableView.reloadData()
-                
-                print("JSON: \(json)")
-            case .failure(let error):
-                print(error)
-            }
-        }
+        //movie()
+        
+
+
+        
+        
     }
     
     
-}
+//    func movie() {
+//        let url = "https://api.themoviedb.org/3/trending/all/week?api_key=\(APIKey.tmdbKey)"
+//        AF.request(url, method: .get).validate().responseDecodable(of: TMDBData.self) { response in
+//
+//            guard let value = response.value else { return }
+//            let date = Result.CodingKeys.rawValue(codingKey: "release_date")
+//            print(date)
+//
+//        }
+//        { response in
+//            switch response.result {
+//            case .success(let value):
+//                let json = JSON(value)
+                
+                
+                
+//                for item in json["results"].arrayValue {
+//                    let movieDate = item["release_date"].stringValue
+//                    let movieGenre = item["genre_ids"][0].intValue
+//                    let movieThumbnail = item["poster_path"].stringValue
+//                    let movieTitle = item["title"].stringValue
+//                    let movieCastId = item["id"].intValue
+//                    let movieBackImage = item["backdrop_path"].stringValue
+//                    let movieOverView = item["overview"].stringValue
+//                    self.movieList.append(Movie(date: movieDate, genre: movieGenre, thumbnail: movieThumbnail, title: movieTitle, castId: movieCastId, backImage: movieBackImage, overView: movieOverView))
+//                }
+                
+//                self.movieTableView.reloadData()
+//
+//                print("JSON: \(json)")
+//            case .failure(let error):
+//                print(error)
+//            }
+//        }
+    }
+    
+    
+
 
 
 extension ViewController: UITableViewDataSource, UITableViewDelegate {
@@ -102,7 +118,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         
         
         vc.textVieww = movieList[indexPath.row].overView
-        print(vc.id)
+       
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
