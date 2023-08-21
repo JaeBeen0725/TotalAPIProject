@@ -28,7 +28,7 @@ class LotteryViewController: UIViewController {
             
             guard let value = response.value else { return }
             
-            self.lottoResult.text = value.drwNoDate
+            self.lottoResult.text = "\(value.drwNoDate) + \(value.drwNo)"
         }
     }
  

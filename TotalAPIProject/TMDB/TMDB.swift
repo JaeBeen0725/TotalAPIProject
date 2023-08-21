@@ -23,9 +23,9 @@ struct TMDBData: Codable {
 struct Result: Codable {
     let title: String?
     let backdropPath, posterPath: String
-    let mediaType: MediaType
+    let mediaType: String?
     let releaseDate: String?
-    let originalLanguage: OriginalLanguage
+    let originalLanguage: String?
     let id: Int
     let adult: Bool
     let voteAverage: Double
@@ -60,14 +60,35 @@ struct Result: Codable {
     }
 }
 
-enum MediaType: String, Codable {
-    case movie = "movie"
-    case tv = "tv"
+
+struct Tmdb: Codable {
+    let id: Int
+    let cast: [CastTMDB]
 }
 
-enum OriginalLanguage: String, Codable {
-    case en = "en"
-    case fr = "fr"
-    case hi = "hi"
-    case ja = "ja"
+// MARK: - Cast
+struct CastTMDB: Codable {
+    let adult: Bool
+    let gender, id: Int
+    let knownForDepartment, name, originalName: String
+ 
+    let profilePath: String?
+    let castID: Int?
+    let character: String?
+    let creditID: String
+   
+    let department, job: String?
+
+    enum CodingKeys: String, CodingKey {
+        case adult, gender, id
+        case knownForDepartment = "known_for_department"
+        case name
+        case originalName = "original_name"
+   
+        case profilePath = "profile_path"
+        case castID = "cast_id"
+        case character
+        case creditID = "credit_id"
+        case department, job
+    }
 }
