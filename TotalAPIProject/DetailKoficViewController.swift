@@ -15,12 +15,12 @@ import Alamofire
 
 class DetailKoficViewController: UIViewController {
     
-    var koficNum = 1
+    var koficNum: String = ""
     var koficTitle: String = "a"
-    var detailList: [String] = []
+    var detailList: DetailKofic = DetailKofic(movieInfoResult: MovieInfoResult(movieInfo: MovieInfo(movieCD: "", movieNm: "", movieNmEn: "", movieNmOg: "", showTm: "", prdtYear: "", openDt: "", prdtStatNm: "", actors: []), source: ""))
     @IBOutlet var detailKoficTableView: UITableView!
     @IBOutlet var detailTitleLabel: UILabel!
-    @IBOutlet var detailGenreLabel: UILabel!
+    
     
     
     override func viewDidLoad() {
@@ -33,57 +33,40 @@ class DetailKoficViewController: UIViewController {
     }
     
     
-    func detailKofic(movieCd: Int) {
+    func detailKofic(movieCd: String) {
         
         let url = "http://www.kobis.or.kr/kobisopenapi/webservice/rest/movie/searchMovieInfo.json?key=\(APIKey.kofic)&movieCd=\(movieCd)"
-        AF.request(url, method: .get).validate().responseJSON { response in
-            switch response.result {
-            case .success(let value):
-                let json = JSON(value)
+        AF.request(url, method: .get).validate().responseDecodable(of: DetailKofic.self) { response in
             
-
-                for item in json["movieInfoResult"]["movieInfo"]["actors"].arrayValue {
-
-
-                    let actor = item["peopleNm"].stringValue
-
-
-                    self.detailList.append(actor)
-                }
-                
-                self.detailKoficTableView.reloadData()
-                
-                
-                 print("JSON: \(json)")
-            case .failure(let error):
-                print(error)
-            }
+            guard let value = response.value else { return }
+            
+            self.detailList = value
+            self.detailKoficTableView.reloadData()
+        }
+        
+        
+    }
+    
+    
+}
+    extension DetailKoficViewController: UITableViewDataSource,UITableViewDelegate {
+        
+        
+        func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+            return detailList.movieInfoResult.movieInfo.actors.count
+        }
+        
+        
+        
+        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "DetailKoficTableViewCell", for: indexPath) as? DetailKoficTableViewCell else {return UITableViewCell() }
+            
+            cell.actorName.text = detailList.movieInfoResult.movieInfo.actors[indexPath.row].peopleNmEn
+            
+            return cell
         }
         
     }
     
     
-}
-
-
-
-extension DetailKoficViewController: UITableViewDataSource,UITableViewDelegate {
-    
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return detailList.count
-    }
-    
-    
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "DetailKoficTableViewCell", for: indexPath) as? DetailKoficTableViewCell else {return UITableViewCell() }
-        
-        cell.actorName.text = detailList[indexPath.row]
-        
-        return cell
-    }
-    
-}
-
 
