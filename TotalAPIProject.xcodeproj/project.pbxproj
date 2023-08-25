@@ -30,6 +30,8 @@
 		6EA357042A8E263100FA18DB /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 6EA357032A8E263100FA18DB /* Alamofire */; };
 		6EA357072A8E263700FA18DB /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 6EA357062A8E263700FA18DB /* Kingfisher */; };
 		6EA3570A2A8E263F00FA18DB /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 6EA357092A8E263F00FA18DB /* SwiftyJSON */; };
+		6EC227B32A98E754009D2A31 /* TMDBOnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC227B22A98E754009D2A31 /* TMDBOnboardingViewController.swift */; };
+		6EC227B62A990291009D2A31 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 6EC227B52A990291009D2A31 /* SnapKit */; };
 		6ED6EEC82A934DC000375785 /* LotteryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED6EEC72A934DC000375785 /* LotteryViewController.swift */; };
 		6ED6EECA2A934F3500375785 /* LOTTERY.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED6EEC92A934F3500375785 /* LOTTERY.swift */; };
 /* End PBXBuildFile section */
@@ -57,6 +59,7 @@
 		6EA356F82A8E23F200FA18DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6EA356FE2A8E247600FA18DB /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		6EA357002A8E249800FA18DB /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
+		6EC227B22A98E754009D2A31 /* TMDBOnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBOnboardingViewController.swift; sourceTree = "<group>"; };
 		6ED6EEC72A934DC000375785 /* LotteryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LotteryViewController.swift; path = TotalAPIProject/LotteryViewController.swift; sourceTree = SOURCE_ROOT; };
 		6ED6EEC92A934F3500375785 /* LOTTERY.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LOTTERY.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -67,6 +70,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6EA3570A2A8E263F00FA18DB /* SwiftyJSON in Frameworks */,
+				6EC227B62A990291009D2A31 /* SnapKit in Frameworks */,
 				6EA357072A8E263700FA18DB /* Kingfisher in Frameworks */,
 				6EA357042A8E263100FA18DB /* Alamofire in Frameworks */,
 			);
@@ -84,6 +88,7 @@
 				6EA356EE2A8E23F200FA18DB /* ViewController.swift */,
 				6E940BA32A926C3700B30237 /* TMDB.swift */,
 				6E940BA52A926DCB00B30237 /* TMDBManager.swift */,
+				6EC227B22A98E754009D2A31 /* TMDBOnboardingViewController.swift */,
 			);
 			path = TMDB;
 			sourceTree = "<group>";
@@ -173,6 +178,7 @@
 				6EA357032A8E263100FA18DB /* Alamofire */,
 				6EA357062A8E263700FA18DB /* Kingfisher */,
 				6EA357092A8E263F00FA18DB /* SwiftyJSON */,
+				6EC227B52A990291009D2A31 /* SnapKit */,
 			);
 			productName = TotalAPIProject;
 			productReference = 6EA356E72A8E23F200FA18DB /* TotalAPIProject.app */;
@@ -206,6 +212,7 @@
 				6EA357022A8E263100FA18DB /* XCRemoteSwiftPackageReference "Alamofire" */,
 				6EA357052A8E263700FA18DB /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				6EA357082A8E263F00FA18DB /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+				6EC227B42A990291009D2A31 /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = 6EA356E82A8E23F200FA18DB /* Products */;
 			projectDirPath = "";
@@ -247,6 +254,7 @@
 				6ED6EEC82A934DC000375785 /* LotteryViewController.swift in Sources */,
 				6E7E28AF2A8E4631002BFF49 /* DetailViewController.swift in Sources */,
 				6E940BA02A90A60B00B30237 /* DetailKoficViewController.swift in Sources */,
+				6EC227B32A98E754009D2A31 /* TMDBOnboardingViewController.swift in Sources */,
 				6E3083652A93C77900209F7E /* Kofic.swift in Sources */,
 				6EA357012A8E249800FA18DB /* APIKey.swift in Sources */,
 				6E940B9A2A90807600B30237 /* KoficCollectionViewCell.swift in Sources */,
@@ -502,6 +510,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		6EC227B42A990291009D2A31 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -519,6 +535,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 6EA357082A8E263F00FA18DB /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
 			productName = SwiftyJSON;
+		};
+		6EC227B52A990291009D2A31 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6EC227B42A990291009D2A31 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
