@@ -93,6 +93,9 @@ class ThirdViewController: UIViewController {
             make.size.equalTo(60)
             make.center.equalTo(view)
             
+            UserDefaults.standard.set(true, forKey: "launch")
+            
+            
         }
 
     }

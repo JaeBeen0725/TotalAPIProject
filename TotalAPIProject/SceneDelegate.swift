@@ -15,10 +15,29 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
       
         guard let scene = (scene as? UIWindowScene) else { return }
-           
         window = UIWindow(windowScene: scene)
-        let vc = TMDBOnboardingViewController()
-        window?.rootViewController = vc
+        
+        UserDefaults.standard.set(false, forKey: "launch")
+        
+        let isLaunched = UserDefaults.standard.bool(forKey: "launch")
+        print(isLaunched)
+        if isLaunched == false {
+            
+            let vc = TMDBOnboardingViewController()
+            window?.rootViewController = vc
+            
+        } else {
+            
+            let sb = UIStoryboard(name: "Main", bundle: nil)
+            guard let vc = sb.instantiateViewController(identifier: "ViewController") as? ViewController else {return}
+            
+            let nav = UINavigationController(rootViewController: vc)
+             
+            window?.rootViewController = vc
+            
+        }
+        
+     
         window?.makeKeyAndVisible()
         
         

@@ -46,6 +46,7 @@ class DetailViewController: UIViewController {
             
             guard let value = response.value else { return }
             
+
             self.castList = value
             // self.castList = value
             /*
