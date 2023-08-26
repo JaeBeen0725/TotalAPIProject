@@ -7,51 +7,87 @@
 
 import UIKit
 import SnapKit
+import SwiftUI
+import Kingfisher
+
 class FirstViewController: UIViewController {
+    
+    let firstImageView = UIImageView()
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .red
+  
         
+        firstPageSetting() 
     }
+    
+    func firstPageSetting() {
+        
+        view.addSubview(firstImageView)
+        pageImageSetting(view: firstImageView, url: "https://img1.daumcdn.net/thumb/C300x430/?fname=https%3A%2F%2Ft1.daumcdn.net%2Fmovie%2Fbc8999d18f7d4bd8b579e6058b71e7c3d8890eb5")
+      
+    }
+    
+    
 }
 
 class SecondViewController: UIViewController {
     
+    let secondImageView = UIImageView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .blue
-        
+     
+        secondtPageSetting()
     }
+    func secondtPageSetting() {
+        view.addSubview(secondImageView)
+        pageImageSetting(view: secondImageView, url: "https://img1.daumcdn.net/thumb/C300x430/?fname=https%3A%2F%2Ft1.daumcdn.net%2Fmovie%2Fce3dda655bc0eb73ffd6e82ba32e1bc6322b173a")
+      
+    
+    }
+    
 }
 
 
 class ThirdViewController: UIViewController {
     
+    let thirdImageView = UIImageView()
     let startButton = {
         
         var view = UIButton()
         
         view.setTitle("시작", for: .normal)
         view.setTitleColor(UIColor.white, for: .normal)
-        view.backgroundColor = .black
-        
-
        return view
     }()
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .brown
-        
+
+        thirdtPageSetting()
         startButtonSetting()
     }
     
-    func startButtonSetting() {
+    func thirdtPageSetting() {
         
+        view.addSubview(thirdImageView)
+            pageImageSetting(view: thirdImageView, url: "https://i.namu.wiki/i/TO1C6AEmlikEX-A_lop6oyZMlFBzgHOS9yjyTVNknhvlAS_CgGsnRMxMZxpbbaRjkmZU5ygG4OtRUo2ZAI5f8w.webp")
+          
+        
+        
+        
+    }
+    
+    
+    func startButtonSetting() {
+        print(#function)
         view.addSubview(startButton)
-        startButton.addTarget(ViewController.self, action: #selector(<#T##@objc method#>), for: .touchUpInside)
+        startButton.addTarget(self, action: #selector(startButtonClicked), for: .touchUpInside)
+        
         startButton.backgroundColor = .brown
         startButton.snp.makeConstraints { make in
             make.size.equalTo(60)
@@ -61,15 +97,21 @@ class ThirdViewController: UIViewController {
 
     }
     
-    @objc func startButtonClicked() {
-        
-        
-        
+@objc func startButtonClicked() {
+    print("===========+", #function)
+    let sb = UIStoryboard(name: "Main", bundle: nil)
+    
+    guard let vc = sb.instantiateViewController(withIdentifier: "ViewController") as? ViewController else {return}
+    
+    let nav = UINavigationController(rootViewController: vc)
+    nav.modalPresentationStyle = .fullScreen
+        present(nav, animated: true)
+   
+    
     }
     
     
 }
-
 
 
 class TMDBOnboardingViewController: UIPageViewController {
