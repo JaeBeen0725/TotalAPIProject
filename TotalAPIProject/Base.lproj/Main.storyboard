@@ -86,24 +86,12 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XaR-bM-Lfh">
-                                                            <rect key="frame" x="8" y="293.33333333333331" width="369" height="25"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="25" id="x3J-Rm-b4l"/>
-                                                            </constraints>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
                                                     </subviews>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <constraints>
-                                                        <constraint firstItem="XaR-bM-Lfh" firstAttribute="top" secondItem="ERY-9K-RPg" secondAttribute="bottom" constant="4" id="90W-G7-M0j"/>
                                                         <constraint firstItem="ERY-9K-RPg" firstAttribute="leading" secondItem="QPZ-f6-QkE" secondAttribute="leading" constant="8" id="EOj-cr-am8"/>
-                                                        <constraint firstItem="XaR-bM-Lfh" firstAttribute="leading" secondItem="QPZ-f6-QkE" secondAttribute="leading" constant="8" id="Ni2-NV-Nbs"/>
                                                         <constraint firstItem="ERY-9K-RPg" firstAttribute="top" secondItem="5py-DL-nb1" secondAttribute="bottom" constant="16" id="YRM-Gh-gxc"/>
                                                         <constraint firstItem="5py-DL-nb1" firstAttribute="top" secondItem="QPZ-f6-QkE" secondAttribute="top" id="YbD-ME-vOf"/>
-                                                        <constraint firstAttribute="trailing" secondItem="XaR-bM-Lfh" secondAttribute="trailing" constant="8" id="bTJ-bI-Tuv"/>
                                                         <constraint firstItem="5py-DL-nb1" firstAttribute="leading" secondItem="QPZ-f6-QkE" secondAttribute="leading" id="tCq-qP-snY"/>
                                                         <constraint firstItem="5py-DL-nb1" firstAttribute="height" secondItem="QPZ-f6-QkE" secondAttribute="height" multiplier="0.6" id="tMT-Zg-UyK"/>
                                                         <constraint firstAttribute="trailing" secondItem="ERY-9K-RPg" secondAttribute="trailing" constant="8" id="uDD-yv-pDU"/>
@@ -134,7 +122,6 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="movieCastLabel" destination="XaR-bM-Lfh" id="e7w-IC-56F"/>
                                             <outlet property="movieDateLabel" destination="GTw-dy-z0M" id="osf-iQ-cBZ"/>
                                             <outlet property="movieGenreLabel" destination="UcU-FA-euc" id="bWv-IK-Qsg"/>
                                             <outlet property="movieImageView" destination="5py-DL-nb1" id="vnh-mm-LLg"/>
@@ -559,6 +546,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6cA-j5-Yf0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="54" y="1342"/>
+        </scene>
+        <!--Weather View Controller-->
+        <scene sceneID="LQn-ZU-yiW">
+            <objects>
+                <viewController storyboardIdentifier="WeatherViewController" id="DBz-wn-Ma9" customClass="WeatherViewController" customModule="TotalAPIProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="r2z-hG-a6C">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="eI7-Jw-tnO"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X6D-qM-vSG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="958" y="1326"/>
         </scene>
     </scenes>
     <resources>
