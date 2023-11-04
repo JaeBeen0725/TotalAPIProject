@@ -68,7 +68,7 @@ class KoficViewController: UIViewController {
 
     func koficAPI(targetDt: Int) {
         print(#function)
-        let url = "https://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=\(APIKey.kofic)&targetDt=\(targetDt)"
+        let url = "https://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=\(APIKEY.kofic)&targetDt=\(targetDt)"
         AF.request(url, method: .get).validate().responseDecodable(of: Kofic.self) { response in
             //                print(response.result)
             //                print(response)
@@ -113,7 +113,7 @@ class KoficViewController: UIViewController {
         }
     }
     func weekKofic(targetDt: Int) {
-                let url1 = "https://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchWeeklyBoxOfficeList.json?key=\(APIKey.kofic)&targetDt=\(targetDt)"
+                let url1 = "https://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchWeeklyBoxOfficeList.json?key=\(APIKEY.kofic)&targetDt=\(targetDt)"
                 AF.request(url1, method: .get).validate().responseDecodable(of: WeekKofic.self) { response in
 
                     guard let value = response.value else { return }

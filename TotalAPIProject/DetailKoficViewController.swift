@@ -35,7 +35,7 @@ class DetailKoficViewController: UIViewController {
     
     func detailKofic(movieCd: String) {
         
-        let url = "http://www.kobis.or.kr/kobisopenapi/webservice/rest/movie/searchMovieInfo.json?key=\(APIKey.kofic)&movieCd=\(movieCd)"
+        let url = "http://www.kobis.or.kr/kobisopenapi/webservice/rest/movie/searchMovieInfo.json?key=\(APIKEY.kofic)&movieCd=\(movieCd)"
         AF.request(url, method: .get).validate().responseDecodable(of: DetailKofic.self) { response in
             
             guard let value = response.value else { return }

@@ -14,7 +14,7 @@ class TMDBManager {
     static let shared = TMDBManager()
     
     func callRequestCodable(success: @escaping (TMDBData) -> Void, failure: @escaping () -> Void ) {
-        let url = "https://api.themoviedb.org/3/trending/all/week?api_key=\(APIKey.tmdbKey)"
+        let url = "https://api.themoviedb.org/3/trending/all/week?api_key=\(APIKEY.tmdbKey)"
         
         AF.request(url, method: .get).validate(statusCode: 200...500).responseDecodable(of: TMDBData.self){ response in
             

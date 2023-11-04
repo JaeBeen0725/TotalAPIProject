@@ -39,7 +39,7 @@ class ViewController: UIViewController {
     }
     
     func callrequest() {
-        let url = "https://api.themoviedb.org/3/trending/all/week?api_key=\(APIKey.tmdbKey)"
+        let url = "https://api.themoviedb.org/3/trending/all/week?api_key=\(APIKEY.tmdbKey)"
         
         AF.request(url, method: .get).validate().responseDecodable(of: TMDBData.self) { response in
             

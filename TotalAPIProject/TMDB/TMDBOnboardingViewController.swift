@@ -14,22 +14,16 @@ class FirstViewController: UIViewController {
     
     let firstImageView = UIImageView()
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
   
-        
         firstPageSetting() 
     }
-    
     func firstPageSetting() {
-        
         view.addSubview(firstImageView)
         pageImageSetting(view: firstImageView, url: "https://img1.daumcdn.net/thumb/C300x430/?fname=https%3A%2F%2Ft1.daumcdn.net%2Fmovie%2Fbc8999d18f7d4bd8b579e6058b71e7c3d8890eb5")
       
     }
-    
     
 }
 

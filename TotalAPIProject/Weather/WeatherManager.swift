@@ -13,7 +13,7 @@ class WeatherManager {
     
     static let shared = WeatherManager()
     
-    let url = "https://api.openweathermap.org/data/2.5/weather?lat=44.34&lon=10.99&appid=\(APIKey.weather)"
+    let url = "https://api.openweathermap.org/data/2.5/weather?lat=44.34&lon=10.99&appid=\(APIKEY.weather)"
     
     func callRequestCodable(success: @escaping (WeatherData) -> Void, failure: @escaping () -> Void) {
         

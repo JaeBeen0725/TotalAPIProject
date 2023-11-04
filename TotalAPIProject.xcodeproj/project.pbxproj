@@ -8,9 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		6E3083652A93C77900209F7E /* Kofic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3083642A93C77900209F7E /* Kofic.swift */; };
-		6E7177F92AF609F000120591 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 6E7177F82AF609F000120591 /* .gitignore */; };
 		6E7177FB2AF61D9000120591 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 6E7177FA2AF61D9000120591 /* README.md */; };
-		6E7177FD2AF61E2800120591 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7177FC2AF61E2800120591 /* APIKey.swift */; };
+		6E7177FF2AF6201D00120591 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 6E7177FE2AF6201D00120591 /* .gitignore */; };
+		6E7178012AF6204A00120591 /* APIKEY.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7178002AF6204A00120591 /* APIKEY.swift */; };
 		6E7E28AD2A8E2C7A002BFF49 /* MovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7E28AC2A8E2C7A002BFF49 /* MovieTableViewCell.swift */; };
 		6E7E28AF2A8E4631002BFF49 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7E28AE2A8E4631002BFF49 /* DetailViewController.swift */; };
 		6E7E28B12A8E4ECF002BFF49 /* CastTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7E28B02A8E4ECF002BFF49 /* CastTableViewCell.swift */; };
@@ -43,9 +43,9 @@
 
 /* Begin PBXFileReference section */
 		6E3083642A93C77900209F7E /* Kofic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kofic.swift; sourceTree = "<group>"; };
-		6E7177F82AF609F000120591 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		6E7177FA2AF61D9000120591 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		6E7177FC2AF61E2800120591 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
+		6E7177FE2AF6201D00120591 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		6E7178002AF6204A00120591 /* APIKEY.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKEY.swift; sourceTree = "<group>"; };
 		6E7E28AC2A8E2C7A002BFF49 /* MovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
 		6E7E28AE2A8E4631002BFF49 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		6E7E28B02A8E4ECF002BFF49 /* CastTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastTableViewCell.swift; sourceTree = "<group>"; };
@@ -128,6 +128,7 @@
 		6EA356DE2A8E23F200FA18DB = {
 			isa = PBXGroup;
 			children = (
+				6E7177FE2AF6201D00120591 /* .gitignore */,
 				6E7177FA2AF61D9000120591 /* README.md */,
 				6EA356E92A8E23F200FA18DB /* TotalAPIProject */,
 				6EA356E82A8E23F200FA18DB /* Products */,
@@ -155,9 +156,8 @@
 				6EA356F32A8E23F200FA18DB /* Assets.xcassets */,
 				6EA356F52A8E23F200FA18DB /* LaunchScreen.storyboard */,
 				6EA356F82A8E23F200FA18DB /* Info.plist */,
-				6E7177F82AF609F000120591 /* .gitignore */,
-				6E7177FC2AF61E2800120591 /* APIKey.swift */,
 				6E940BCB2A93285100B30237 /* CodeBaseViewController.swift */,
+				6E7178002AF6204A00120591 /* APIKEY.swift */,
 			);
 			path = TotalAPIProject;
 			sourceTree = "<group>";
@@ -251,7 +251,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6E7177F92AF609F000120591 /* .gitignore in Resources */,
+				6E7177FF2AF6201D00120591 /* .gitignore in Resources */,
 				6EA356F72A8E23F200FA18DB /* LaunchScreen.storyboard in Resources */,
 				6E7177FB2AF61D9000120591 /* README.md in Resources */,
 				6EA356F42A8E23F200FA18DB /* Assets.xcassets in Resources */,
@@ -268,7 +268,6 @@
 			files = (
 				6EC227BF2A9B33CA009D2A31 /* Weather.swift in Sources */,
 				6E940BA62A926DCB00B30237 /* TMDBManager.swift in Sources */,
-				6E7177FD2AF61E2800120591 /* APIKey.swift in Sources */,
 				6E7E28AD2A8E2C7A002BFF49 /* MovieTableViewCell.swift in Sources */,
 				6EA356EF2A8E23F200FA18DB /* ViewController.swift in Sources */,
 				6ED6EECA2A934F3500375785 /* LOTTERY.swift in Sources */,
@@ -276,6 +275,7 @@
 				6E940BA42A926C3700B30237 /* TMDB.swift in Sources */,
 				6EC227BD2A9B25EC009D2A31 /* WeatherManager.swift in Sources */,
 				6E7E28B12A8E4ECF002BFF49 /* CastTableViewCell.swift in Sources */,
+				6E7178012AF6204A00120591 /* APIKEY.swift in Sources */,
 				6E940B9E2A90848900B30237 /* KoficViewController.swift in Sources */,
 				6E940B9C2A90808D00B30237 /* KoficTableViewCell.swift in Sources */,
 				6EA356EB2A8E23F200FA18DB /* AppDelegate.swift in Sources */,

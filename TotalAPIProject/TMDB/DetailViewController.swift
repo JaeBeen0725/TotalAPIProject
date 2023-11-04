@@ -41,7 +41,7 @@ class DetailViewController: UIViewController {
     }
     
     func detail(id: Int) {
-        let url = "https://api.themoviedb.org/3/movie/\(id)/credits?api_key=\(APIKey.tmdbKey)"
+        let url = "https://api.themoviedb.org/3/movie/\(id)/credits?api_key=\(APIKEY.tmdbKey)"
         AF.request(url, method: .get).validate().responseDecodable(of: Tmdb.self) { response in
             
             guard let value = response.value else { return }
